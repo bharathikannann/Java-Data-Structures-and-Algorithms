@@ -54,11 +54,11 @@ public class LinkedList {
         if(position==0){
             head=head.next;
         }else{
-            Node n=head;                        //Node temp;  temp=n.next;  n.next=temp.next  temp=null
+            Node n=head;                        
             for(int i=0;i<position-1;i++){
                 n=n.next;
             }
-            n.next=n.next.next;
+            n.next=n.next.next;             //Node temp;  temp=n.next;  n.next=temp.next  temp=null
         }
     }
 }
