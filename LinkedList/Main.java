@@ -9,18 +9,16 @@ public class Main {
         lists.insert(7);
         lists.insertAtFirst(4);
         lists.insert(4,8);
-        lists.delete(4);
-        lists.delete(3);
+        lists.delete(0);
+        lists.deleteAtLast();
+        lists.rotateClockwise(2);
+        lists.rotateAntiClockwise(2);
+        lists.reverse();
         lists.show();
-        System.out.println("----------------------------");
-        Linkedlist2 list=new Linkedlist2();
-        list.insert(5);
-        list.insert(6);
-        list.insert(7);
-        list.insertAtFirst(4);
-        list.insert(4,8);
-        list.delete(4);
-        list.delete(3);
-        list.show();
+        System.out.println("size of the linked list "+lists.size());
+        System.out.println("Is Node Exists "+lists.isNodeExists(4));
+        lists.recursionReversePrint();
+        lists.recursionReverseLinkedList();
+        lists.show();
     }
 }
