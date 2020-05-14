@@ -1,0 +1,11 @@
+## `Available Methods in DoublyLinkedList.java`
+- void insertAtFirst(int n)
+- void show()
+- void void reversePrint()
+- void insertAtPosition(int position,int data)
+- void deleteFirst()
+- void delete(int data)
+- void deletelast()
+- void deleteAtPosition(int position)
+- int size()
+- void roatateClockwiseByK(int k)
