@@ -360,4 +360,29 @@ public class LinkedList {
         oddEnding.next=null;
         head=evenStarting;
     }
+    public void addOne(){
+        reverse();
+        addOneInner();
+        reverse();
+    }
+    private void addOneInner(){
+    Node temp=head;
+    Node prev=null;
+    int carry=1;
+    while(temp!=null){
+        int sum=0;
+        sum=carry+temp.data;
+        carry=sum/10;
+        sum=sum%10;
+        temp.data=sum;
+        prev=temp;
+        temp=temp.next;
+    }
+    if(carry>0){
+        Node node=new Node();
+        node.data=carry;
+        node.next=null;
+        prev.next=node;
+    }
+    }
 }
