@@ -1,4 +1,4 @@
-## **`Available Methods in the linked list`**
+## **`Available Methods in the LinkedList.java`**
 - void insert (int data)
 - void show()
 - void insertAtFirst (int data)
