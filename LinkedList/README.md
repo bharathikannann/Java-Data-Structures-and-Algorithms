@@ -22,3 +22,4 @@
 - void moveLastNodeTOFront ()
 - int getCountOfValue (int number)
 - void seperateEvenodd ()
+- void addOne()
