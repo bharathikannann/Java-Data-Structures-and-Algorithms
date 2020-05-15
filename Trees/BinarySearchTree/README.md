@@ -1,10 +1,10 @@
 ## `Available methods in BST.java`
 - void insert(int data)
-- void inorder
-- void preorder
-- void postorder
-- int sum
-- int getDiffEvenOddNodes
+- void inorder()
+- void preorder()
+- void postorder()
+- int sum()
+- int getDiffEvenOddNodes()
 - int noOfNodes()
 - int noOfLeadNodes()
 - int height()
