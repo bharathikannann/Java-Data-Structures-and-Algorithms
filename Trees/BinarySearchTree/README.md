@@ -1,4 +1,4 @@
-## `Available methods in BST.java`
+## `Available methods in BT.java`
 - void insert(int data)
 - void inorder()
 - void preorder()
