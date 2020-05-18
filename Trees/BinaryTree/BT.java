@@ -5,7 +5,7 @@ import com.sun.jdi.IntegerValue;
 import java.util.*;
 
 class BT {
-    class Node{
+    static class Node{
         int data;
         Node left;
         Node right;
@@ -17,7 +17,7 @@ class BT {
         }
     }
 
-    Node root;
+    Node root=null;
 
     void insert(int data){
         root=insertRec(root,data);
@@ -463,6 +463,87 @@ class BT {
                 }
             System.out.println();
             }
+    }
+    public void printBetweenTwoLevels(int min,int max) {
+        printBetweenTwoLevelsfn(root,min,max);
+    }
+    private void printBetweenTwoLevelsfn(Node root,int min,int max) {
+        if (root == null)
+            return;
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        int level=1;
+        while (true) {
+            int count=q.size();
+            if(count==0 || level>max)
+                break;
+            while (count>0) {
+                Node node = q.remove();
+                if(level>=min && level<=max)
+                    System.out.print(node.data+" ");
+                if (node.left != null)
+                    q.add(node.left);
+                if (node.right != null)
+                    q.add(node.right);
+                count--;
+            }
+            level++;
+            System.out.println();
+        }
+    }
+    public void maxWidth() {
+        maxWidthfn(root);
+    }
+    private void maxWidthfn(Node root) {
+        if (root == null)
+            return;
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        int maxwidth=0;
+        while (true) {
+            int count=q.size();
+            if(count>maxwidth)
+                maxwidth=count;
+            if(count==0)
+                break;
+            while (count>0) {
+                Node node = q.remove();
+                if (node.left != null)
+                    q.add(node.left);
+                if (node.right != null)
+                    q.add(node.right);
+                count--;
+            }
+        }
+        System.out.println(maxwidth);
+    }
+    public boolean ifMirrorTree(Node root1,Node root2){
+        if(root1==null && root2==null)
+            return true;
+        if(root1==null ||root2==null)
+            return false;
+        return root1.data==root2.data && ifMirrorTree(root1.left,root2.right)&&ifMirrorTree(root1.right,root2.left);
+    }
+    public boolean ifMirrorStructureTree(Node root1,Node root2){
+        if(root1==null && root2==null)
+            return true;
+        if(root1==null ||root2==null)
+            return false;
+        return ifMirrorStructureTree(root1.left,root2.right)&&ifMirrorStructureTree(root1.right,root2.left);
+    }
+    public boolean ifSameStructureTree(Node root1,Node root2){
+        if(root1==null && root2==null)
+            return true;
+        if(root1==null ||root2==null)
+            return false;
+        return ifMirrorStructureTree(root1.left,root2.left)&&ifMirrorStructureTree(root1.right,root2.right);
+    }
+    public boolean isFoldable(){
+        Node node=root;
+        if(node==null)
+            return true;
+        else
+            return ifMirrorStructureTree(node.left,node.right);
     }
 }
 
