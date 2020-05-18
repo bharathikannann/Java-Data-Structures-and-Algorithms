@@ -26,4 +26,10 @@
 - boolean recursiveSearch(int data)
 - boolean iterativeSearch(int data)
 - void spiralOrder()
+- void printBetweenTwoLevels(int min,int max)
+- void maxWidth()
+- boolean ifMirrorTree(Node root1,Node root2)
+- boolean ifMirrorStructureTree(Node root1,Node root2)
+- boolean ifSameStructureTree(Node root1,Node root2)
+- boolean isFoldable()
 
